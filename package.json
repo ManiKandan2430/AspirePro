@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
-  "scripts": {
-    "server": "nodemon server.js",
-    "client": "cd client && npm run dev",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "prebuild": "export NODE_OPTIONS=--max-old-space-size=1024",
-    "build": "cd client && npm run build"
-  },
+"scripts": {
+  "start": "node server.js",
+  "server": "nodemon server.js",
+  "client": "cd client && npm run dev",
+  "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+  "prebuild": "export NODE_OPTIONS=--max-old-space-size=1024",
+  "build": "cd client && npm install && npm run build"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
