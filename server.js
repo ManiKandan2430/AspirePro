@@ -62,7 +62,7 @@ app.get("api/v1/jobs", (req, res) => {
 try {
   await mongoose.connect(process.env.MONGO_URL);
   console.log("database connected");
-  app.listen(port,'0.0.0.0', (req, res) => {
+  app.listen(port, (req, res) => {
     console.log(`server running on port ${port}`);
   });
 } catch (error) {
