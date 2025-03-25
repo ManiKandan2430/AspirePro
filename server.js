@@ -53,7 +53,7 @@ app.use("*", (req, res) => {
 
 app.use(errorHandlerMiddleware);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3100;
 
 app.get("api/v1/jobs", (req, res) => {
   res.send(Job.find({}));
