@@ -3,7 +3,6 @@ import { FormJobs} from "../components";
 import { AuthContext } from "../context/AuthContext";
 import { Form, useNavigate } from "react-router-dom";
 import { JobContext } from "../context/JobContext.jsx";
-// import "../App.css";
 
 const Addjob = ({data}) => {
   const { isLoading } = useContext(AuthContext);
