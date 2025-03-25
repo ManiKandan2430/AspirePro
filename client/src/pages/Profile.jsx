@@ -13,9 +13,6 @@ const Profile = ({ data }) => {
   const profile = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    console.log(formData);
-    
-
     const file = formData.get("avatar");
     if (file && file.size > 50000) {
       toast.error("Image size too large");

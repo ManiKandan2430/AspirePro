@@ -14,11 +14,9 @@ import { authenticateUser } from "./middleware/authMiddleware.js";
 import cors from "cors";
 import Job from "./Model/Jobmodel.js";
 import { v2 as cloudinary } from "cloudinary";
-import helmet from 'helmet'
-import mongoSanitize from 'express-mongo-sanitize'
+import helmet from "helmet";
+import mongoSanitize from "express-mongo-sanitize";
 const app = express();
-
-
 
 app.use(
   cors({
@@ -32,16 +30,16 @@ app.use(express.static(path.resolve(_dirname, "./public")));
 dotenv.config();
 app.use(cookieParser());
 app.use(express.json());
-app.use(helmet())
-app.use(mongoSanitize())
+app.use(helmet());
+app.use(mongoSanitize());
 
 app.use("/api/v1/jobs", authenticateUser, jobRoute);
 app.use("/api/v1/users", authenticateUser, userRoute);
 app.use("/api/v1/auth", authRoute);
 
-app.get('*',(req,res)=>{
+app.get("*", (req, res) => {
   res.sendFile(path.resolve(_dirname, "./public", "index.html"));
-})
+});
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
@@ -57,10 +55,9 @@ app.use(errorHandlerMiddleware);
 
 const port = process.env.PORT || 3000;
 
-
-app.get('api/v1/jobs',(req,res)=>{
-  res.send(Job.find({}))
-})
+app.get("api/v1/jobs", (req, res) => {
+  res.send(Job.find({}));
+});
 
 try {
   await mongoose.connect(process.env.MONGO_URL);
@@ -68,4 +65,6 @@ try {
   app.listen(port, (req, res) => {
     console.log(`server running on port ${port}`);
   });
-} catch (error) {}
+} catch (error) {
+  console.log(error);
+}

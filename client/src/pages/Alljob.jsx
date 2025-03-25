@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { SearchContainer } from "../components";
-import { customFetch } from "../utils/cutomFetch";
 import { JobContext } from "../context/JobContext";
-import useFetch from '../utils/useFetch'
+
 
 const Alljob = () => {
   const {loading,error} = useContext(JobContext) 

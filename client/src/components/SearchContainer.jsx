@@ -32,7 +32,6 @@ const SearchContainer = () => {
       const response = await customFetch.get("/jobs", {
         params: { ...params, page },
       });
-      console.log("jobs",response.data);
       setJobs(response.data.jobs);
     } catch (err) {
       console.error("Search Error:", err);

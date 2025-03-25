@@ -9,13 +9,11 @@ const Addjob = ({data}) => {
   const { isLoading } = useContext(AuthContext);
   const { CreateJob } = useContext(JobContext);
   const navigate = useNavigate();
-  console.log("addjob",data?.jobLocation);
   
   if (isLoading) {
     return <p>Loading user data...</p>; // Show loading state
   }
   const location = data?.jobLocation || "Unknown location";
-  console.log(location);
   const handleAddjob = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);

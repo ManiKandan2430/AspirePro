@@ -14,7 +14,6 @@ const EditJob = () => {
     return <p>Loading user data...</p>;
   }
 ;
-  console.log(alljobs);
   
   const jobToEdit = alljobs.find((job) => job._id === id);
   const { position, company, jobLocation, jobType, jobStatus } = jobToEdit;

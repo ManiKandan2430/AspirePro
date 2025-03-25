@@ -3,7 +3,7 @@ import "../App.css";
 import { Link } from "react-router-dom";
 import Lottie from "react-lottie-player";
 import animationData from "../assets/Animation - 1734272457033.json";
-import image from "../../public/bg_job1.webp";
+// import image from "../../public/bg_job1.webp";
 
 const LandingPage = () => {
   return (
@@ -50,7 +50,7 @@ const LandingPage = () => {
           {/* Background Image */}
           <div className="relative w-full lg:w-1/2 xl:w-7/12">
             <img
-              src={image}
+              src="/bg_job1.webp"
               alt="Job search"
               className="h-[500px] xl:h-[600px] w-full object-cover rounded-lg shadow-md"
             />

@@ -54,7 +54,7 @@ useEffect(() => {
   }, 100);
 
   return () => {
-    clearTimeout(timeoutId); // Cleanup on component unmount
+    clearTimeout(timeoutId);
   };
 }, []);
 

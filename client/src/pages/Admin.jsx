@@ -16,7 +16,6 @@ const Admin = () => {
     try {
       setLoading(true);
       const response = await customFetch.get("/users/admin/app-stats");
-      console.log("admin", response.data);
       setAdminStats(response.data);
     } catch (error) {
       if (!toastShownRef.current) {

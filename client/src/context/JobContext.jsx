@@ -14,7 +14,6 @@ export const JobProvider = ({ children }) => {
   const CreateJob = async (data, navigate) => {
     try {
       const response = await customFetch.post("/jobs", data);
-      console.log(response);
       setNewJob(response);
       toast.success("job created");
       navigate("/dashboard/alljobs");
@@ -26,7 +25,6 @@ export const JobProvider = ({ children }) => {
   const Editjob = async (data, navigate, id) => {
     try {
       const response = await customFetch.patch(`/jobs/${id}`, data);
-      console.log(response.data);
       setEditjob(response.data);
       toast.success("Job Modified");
       navigate("/dashboard/alljobs");
@@ -49,7 +47,6 @@ export const JobProvider = ({ children }) => {
     try {
       setLoading(true);
       const response = await customFetch.get("/jobs");
-      console.log(response.data);
       setAlljobs(response.data.jobs);
     } catch (error) {
       console.log(error);

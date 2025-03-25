@@ -9,11 +9,8 @@ import {
   CartesianGrid,
   ResponsiveContainer,
 } from "recharts";
-import { Button, Typography } from "@mui/material";
 
 const BarChartComponent = ({ data }) => {
-  console.log(data);
-
   return (
     <>
       <h1 className="text-2xl mt-10"> Bar Chart</h1>

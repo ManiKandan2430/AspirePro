@@ -8,10 +8,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import { Typography } from "@mui/material";
-const AreaChartComponent = ({data}) => {
-  console.log(data);
-  
+const AreaChartComponent = ({data}) => {  
   return (
     <>
       <h1 className="text-2xl mt-10">Area Chart</h1>
